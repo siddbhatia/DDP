@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\nshinyUI(fluidPage(\n  # Application title\n  headerPanel(\"Titanic : Your chances of survival\"),\n  sidebarPanel(\n    h3('Your travel details please:'),\n    radioButtons(\"Class\", \"Class:\",\n                 c(\"1st\" = \"1st\",\n                   \"2nd\" = \"2nd\",\n                   \"3rd\" = \"3rd\",\n                   \"Crew\" = \"Crew\")),\n    radioButtons(\"Sex\", \"Gender:\",\n                 c(\"Male\" = \"Male\",\n                   \"Female\" = \"Female\")),\n    radioButtons(\"Age\", \"Age Group:\",\n                 c(\"Child\" = \"Child\",\n                   \"Adult\" = \"Adult\")),\n    submitButton('Submit'),\n    h5(\"Meanwhile on the iceberg!\"),\n    img(src = \"Titanic-Reloaded.jpg\")\n    ),\n  mainPanel(\n    h3('May the odds be with you!'),\n    h4('Your Class'),\n    verbatimTextOutput(\"oClass\"),\n    h4('Your gender'),\n    verbatimTextOutput(\"oSex\"),\n    h4('Your age group'),\n    verbatimTextOutput(\"oAge\"),\n    h4('Chances of survival for you in your category %'),\n    verbatimTextOutput(\"survival\")\n  ),\n  column(8,\n         includeHTML(\"Documentation.html\")\n  )\n))",
+    "created" : 1408759293312.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4208102441",
+    "id" : "53B46618",
+    "lastKnownWriteTime" : 1408759892,
+    "path" : "~/datasciencecoursera/DDP/ui.r",
+    "project_path" : "ui.r",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

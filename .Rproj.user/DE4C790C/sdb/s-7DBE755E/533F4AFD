@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\npr<-function(Class,Sex,Age){\n  data(Titanic)\n  df<-as.data.frame(Titanic)\n  save<-df[df$Class==Class&df$Sex==Sex&df$Age==Age&df$Survived==\"Yes\",\"Freq\"]\n  tot<- save +df[df$Class==Class&df$Sex==Sex&df$Age==Age&df$Survived==\"No\",\"Freq\"]\n  100*save/tot\n}\nshinyServer(\n  function(input, output) {\n    output$oClass <- renderPrint({input$Class})\n    output$oSex <- renderPrint({input$Sex})\n    output$oAge <- renderPrint({input$Age})\n    output$survival <- renderPrint({pr(input$Class,input$Sex,input$Age)})\n  }\n)",
+    "created" : 1408759300046.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "648773485",
+    "id" : "533F4AFD",
+    "lastKnownWriteTime" : 1408749935,
+    "path" : "~/datasciencecoursera/DDP/server.r",
+    "project_path" : "server.r",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
